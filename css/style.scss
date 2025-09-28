@@ -1,0 +1,612 @@
+@charset "UTF-8";
+@use 'mixin' as m;
+
+$mainColor: #053442;
+
+body {
+    font-size: 100%;
+    color: $mainColor;
+    height: 100%;
+    font-family: "acumin-pro", sans-serif;
+    overflow-x: hidden;
+    background-color: #FFFFFF;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+p {
+    color: $mainColor;
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+    color: $mainColor;
+    display: inline-block;
+    font-weight: 300;
+}
+
+li {
+    color: $mainColor;
+    font-weight: 300;
+}
+
+.br-sp {
+    display: none;
+
+    @include m.sp {
+        display: block;
+    }
+}
+
+.br-pc {
+    @include m.tab {
+        display: none;
+    }
+}
+
+
+// header ===================================================
+header {
+    background-color: #006053;
+    height: 60px;
+    padding-left: 25px;
+
+    h1 {
+        font-size: 20px;
+        font-weight: 300;
+        color: #FFFFFF;
+        line-height: 60px;
+    }
+}
+
+
+// fv-pc ===================================================
+.fv-pc {
+    text-align: center;
+    padding-top: 70px;
+
+    @include m.tab {
+        display: none;
+    }
+
+    .fv-wrapper {
+        max-width: 1503px;
+        margin: 0 auto 90px auto;
+        padding: 0 25px;
+
+        .fv-img-pc {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+
+    // overview ===================================================
+    .overview {
+        background: url(../img/bg-2.png);
+        background-size: cover;
+        padding-bottom: 150px;
+
+        .overview-wrapper {
+            max-width: 1770px;
+            padding: 0 25px;
+            margin: 0 auto;
+            text-align: left;
+
+            .sec-title {
+                display: inline-block;
+                background-color: $mainColor;
+                border-radius: 999px;
+                color: #FFFFFF;
+                font-size: 30px;
+                font-weight: 700;
+                height: 56px;
+                width: 230px;
+                line-height: 56px;
+                text-align: center;
+                margin-bottom: 33px;
+            }
+
+            .overview-head {
+                display: flex;
+                margin-bottom: 10px;
+
+                @media(max-width: 1100px) {
+                    flex-direction: column;
+                }
+
+                img {
+                    width: 395px;
+                    object-fit: contain;
+                    margin-right: 20px;
+                }
+
+                .overview-head-text {
+                    font-size: 42px;
+                    font-weight: 600;
+                    letter-spacing: 0.01em;
+                }
+            }
+
+            .overview-text {
+                font-size: 24px;
+                line-height: 42px;
+            }
+        }
+    }
+
+    .greenline {
+        background: #005f52;
+        height: 20px;
+        width: 100%;
+    }
+}
+
+
+// fv-sp ===================================================
+.fv-sp {
+    display: none;
+    text-align: center;
+    padding-top: 44px;
+
+    @include m.tab {
+        display: block;
+    }
+
+    .fv-sp-wrapper {
+        margin: 0 auto;
+        padding: 0 25px;
+        background: url(../img/bg-sp.png);
+        background-size: contain;
+        background-position: bottom;
+        background-repeat: no-repeat;
+
+
+        .fv-img-sp {
+            width: 100%;
+            object-fit: cover;
+            padding-bottom: 100px;
+        }
+    }
+
+    .greenline {
+        background: #005f52;
+        height: 20px;
+        width: 100%;
+        margin-bottom: 65px;
+    }
+
+
+    // overview-sp ===================================================
+    .overview-sp {
+        .overview-sp-wrapper {
+            padding: 0 25px;
+
+            .sec-title {
+                display: inline-block;
+                background-color: $mainColor;
+                border-radius: 999px;
+                color: #FFFFFF;
+                font-size: 30px;
+                font-weight: 700;
+                text-align: center;
+                width: 100%;
+                height: 60px;
+                max-width: 400px;
+                line-height: 60px;
+                margin-bottom: 40px;
+            }
+
+            .overview-head {
+                margin-bottom: 30px;
+
+                img {
+                    max-width: 395px;
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+
+                .overview-head-text {
+                    font-size: 42px;
+                    font-weight: 600;
+                    letter-spacing: 0.01em;
+                    display: inline-block;
+                    line-height: 42px;
+
+                    span {
+                        font-size: 24px;
+                        vertical-align: 7px;
+                    }
+                }
+            }
+
+            .overview-text {
+                text-align: left;
+                font-size: 18px;
+                line-height: 23px;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+
+
+// map ===================================================
+
+.map {
+    background: linear-gradient(-60deg,
+            rgba(255, 253, 255, 1) 0%,
+            rgba(255, 248, 245, 1) 36%,
+            rgba(241, 234, 233, 1) 54%,
+            rgba(241, 234, 233, 1) 73%,
+            rgba(239, 232, 232, 1) 100%);
+    padding-top: 5px;
+
+    .map-wrapper {
+        max-width: 1730px;
+        margin: 0 auto;
+        padding: 0 25px;
+
+        .map-img {
+            max-width: 1158px;
+            padding: 0 25px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    @include m.tab {
+        display: none;
+    }
+}
+
+
+
+// exhibitors-slide ===================================================
+
+.exhibitors-slide {
+    margin-top: 85px;
+    text-align: center;
+
+    @include m.tab {
+        margin-top: 70px;
+    }
+
+    .sec-title {
+        display: inline-block;
+        background-color: $mainColor;
+        border-radius: 999px;
+        color: #FFFFFF;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 80px;
+        text-align: center;
+        height: 80px;
+        width: calc(100% - 50px);
+        max-width: 670px;
+        margin: 0 25px 60px 25px;
+
+        @include m.tab {
+            height: 60px;
+            max-width: 400px;
+            line-height: 60px;
+        }
+    }
+
+    @keyframes infinity-scroll-left {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-100%);
+        }
+    }
+
+    .scroll-infinity {
+        margin-bottom: 150px;
+
+        @include m.tab {
+            display: none;
+        }
+
+        .scroll-infinity-wrap {
+            display: flex;
+            overflow: hidden;
+
+            .scroll-infinity-list {
+                display: flex;
+                list-style: none;
+                padding: 0;
+                animation: infinity-scroll-left 80s infinite linear 0.5s both;
+
+                .scroll-infinity-item {
+                    width: calc(100vw / 5);
+                    margin-right: 10px;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+// exhibitors-introduction ===================================================
+.exhibitors-introduction {
+    padding: 100px 0 75px 0;
+
+    @include m.tab {
+        padding: 55px 0 75px 0;
+    }
+
+    &:last-child {
+        padding: 100px 0 170px 0;
+
+        @include m.tab {
+            padding: 55px 0 100px 0;
+        }
+    }
+
+    .exhibitors-introduction-wrapper {
+        max-width: 1190px;
+        padding: 0 25px;
+        margin: 0 auto;
+
+        .exhibitors-title {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            margin-bottom: 80px;
+
+            @include m.tab {
+                flex-direction: column;
+                margin-bottom: 30px;
+            }
+
+            .exhibitors-logo {
+                height: 80px;
+                max-width: 100%;
+                margin-right: 45px;
+
+
+                @include m.tab {
+                    height: 60px;
+                    margin-right: 0;
+                    margin-bottom: 20px;
+                }
+            }
+
+            .exhibitors-name {
+                font-size: 45px;
+                font-weight: 700;
+            }
+        }
+
+        .exhibitors-info {
+            margin-bottom: 55px;
+            font-size: 26px;
+            line-height: 40px;
+            letter-spacing: 0.03em;
+            display: flex;
+            flex-wrap: wrap;
+
+            @include m.tab {
+                margin-bottom: 30px;
+                font-size: 28px;
+                line-height: 36px;
+                display: block;
+            }
+
+            .exhibitors-table-heading {
+                width: 220px;
+                vertical-align: top;
+
+                @include m.tab {
+                    width: 100%;
+                }
+            }
+
+            .exhibitors-table-detail {
+                width: calc(100% - 220px);
+                vertical-align: top;
+
+                @include m.tab {
+                    width: 100%;
+                    margin-bottom: 15px;
+                }
+
+                a {
+                    &:hover {
+                        transition: all 0.3s ease;
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .word-break {
+                word-break: break-all;
+            }
+        }
+
+        .exhibitors-detail {
+            font-size: 26px;
+            line-height: 40px;
+            letter-spacing: 0.05em;
+            margin-bottom: 57px;
+
+            @include m.tab {
+                font-size: 28px;
+                line-height: 36px;
+            }
+
+            ol {
+                margin-left: 1.8rem;
+                list-style-position: outside;
+            }
+        }
+    }
+
+
+    .more-detail-btn {
+        max-width: 400px;
+        width: 100%;
+        height: 80px;
+        background: $mainColor;
+        color: #FFFFFF;
+        border-radius: 4px;
+        font-size: 26px;
+        font-weight: 600;
+        text-align: center;
+        line-height: 80px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        @include m.tab {
+            display: block;
+            margin: 0 auto;
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+
+    // modal ===================================================
+    .modal-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background: rgba(0, 0, 0, 70%);
+        padding: 40px 20px;
+        overflow: auto;
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s;
+        box-sizing: border-box;
+
+        /*モーダル本体の擬似要素の指定*/
+        &:before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+
+        /*モーダル本体に「active」クラス付与した時のスタイル*/
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /*モーダル枠の指定*/
+        .modal-body {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            max-width: 90%;
+            width: 100%;
+
+            /*モーダルを閉じるボタンの指定*/
+            .modal-close {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                top: -25px;
+                right: -50px;
+                width: 40px;
+                height: 40px;
+                font-size: 40px;
+                color: #fff;
+                cursor: pointer;
+
+                @include m.sp {
+                    width: 20px;
+                    height: 20px;
+                    font-size: 20px;
+                    top: -20px;
+                    right: -20px;
+                }
+            }
+
+            /*モーダル内のコンテンツの指定*/
+            .modal-content {
+                .modal-img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+.exhibitors-bg-blue {
+    background: #d3e1e5;
+}
+
+.exhibitors-jgc {
+    .exhibitors-introduction-wrapper {
+        .exhibitors-title {
+            .exhibitors-name {
+                @media(max-width: 375px) {
+                    font-size: 41px;
+                }
+            }
+        }
+    }
+}
+
+.exhibitors-kawasaki {
+    .exhibitors-introduction-wrapper {
+        .exhibitors-title {
+            .exhibitors-logo {
+                .exhibitors-name {
+                    @include m.tab {
+                        font-size: 37px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.exhibitors-tb {
+    .exhibitors-introduction-wrapper {
+        .exhibitors-title {
+            .exhibitors-name {
+                @include m.tab {
+                    font-size: 41px;
+                }
+            }
+        }
+    }
+}
+
+
+
+// footer ===================================================
+footer {
+    height: 60px;
+    text-align: center;
+    background: #006053;
+
+    p {
+        font-size: 20px;
+        color: #FFFFFF;
+        line-height: 60px;
+    }
+}
